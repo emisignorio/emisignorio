@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle del producto</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+<header>
+  <div class="logo" onclick="irAlInicio()">Artesanía Aromática</div>
+  <nav>
+    <ul>
+      <li><button onclick="filtrarDesdeDetalle('todos')">Todos</button></li>
+      <li><button onclick="filtrarDesdeDetalle('velas')">Velas</button></li>
+      <li><button onclick="filtrarDesdeDetalle('decoraciones')">Decoraciones</button></li>
+    </ul>
+  </nav>
+  <div class="carrito" onclick="irAlCarrito()">
+    🛒 <span id="contadorcarrito">0</span>
+  </div>
+</header>
+
+  <main class="detalle-main">
+    <div class="detalle-imagen">
+      <img id="imgProducto" src="" alt="Producto" />
+    </div>
+    <div class="detalle-info">
+      <h1 id="nombreProducto"></h1>
+      <p id="detalleProducto" class="detalle-descripcion"></p>
+      <p class="detalle-precio">$<span id="precioProducto"></span></p>
+      <p class="detalle-stock">Stock: <span id="stockProducto"></span> unidades</p>
+
+      <div class="cantidad-control">
+        <button onclick="modificarCantidad(-1)">−</button>
+        <span id="cantidad">1</span>
+        <button onclick="modificarCantidad(1)">+</button>
+      </div>
+
+      <button class="btn-agregar" onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Hecho a mano en Argentina • contacto@artesaniaaromatica.com</p>
+  </footer>
+
+  <script src="detalle.js"></script>
+</body>
+</html>

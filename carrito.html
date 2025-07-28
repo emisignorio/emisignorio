@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Carrito</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+    <div class="logo" onclick="irAlInicio()">Artesanía Aromática</div>
+    <nav>
+        <ul>
+        <li><button onclick="filtrarDesdeDetalle('todos')">Todos</button></li>
+        <li><button onclick="filtrarDesdeDetalle('velas')">Velas</button></li>
+        <li><button onclick="filtrarDesdeDetalle('decoraciones')">Decoraciones</button></li>
+        </ul>
+    </nav>
+    <div class="carrito" onclick="irAlCarrito()">
+        🛒 <span id="contadorcarrito">0</span>
+    </div>
+    </header>
+
+    <main class="carrito-container">
+    <h2>Tu carrito</h2>
+    <table class="tabla-carrito">
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="filasCarrito"></tbody>
+    </table>
+    <div class="carrito-total">
+        <p>Total a pagar: $<span id="totalFinal">0</span></p>
+        <button onclick="finalizarCompra()">Finalizar compra</button>
+    </div>
+    </main>
+    <footer>
+        <p>Gracias por elegirnos 💛</p>
+    </footer>
+    <script src="carrito.js"></script>
+</body>
+</html>
