@@ -1,10 +1,10 @@
 const productos = [
   { id:1, nombre:"Vela Lavanda", categoria:"velas", precio:4200, imagen:"img/Vela aromática.jpg", detalle:"Relajante aroma a lavanda", stock:10 },
-  { id:2, nombre:"Pack x3 Velas", categoria:"velas", precio:3200, imagen:"img/Vela-2.webp", detalle:"Set con esencias de vainilla, jazmín y canela", stock:5 },
+  { id:2, nombre:"Vela Vainilla", categoria:"velas", precio:3200, imagen:"img/Vela-2.webp", detalle:"Velas con esencias de vainilla", stock:5 },
   { id:3, nombre:"Centro de Mesa Floral", categoria:"decoraciones", precio:4500, imagen:"img/vela-3.jpg", detalle:"Decoración con flores secas", stock:10 },
   { id:4, nombre:"Adorno de Madera", categoria:"decoraciones", precio:2800, imagen:"img/Vela-4.webp", detalle:"Figura tallada artesanalmente", stock:5 },
-  { id:5, nombre:"Vela Aromática Premium", categoria:"velas", precio:5200, imagen:"img/Vela aromática.jpg", detalle:"Relajante aroma a lavanda", stock:10 },
-  { id:6, nombre:"Vela de Cera Natural", categoria:"velas", precio:3600, imagen:"img/vela-1.jpg", detalle:"Set con esencias de vainilla, jazmín y canela", stock:10 },
+  { id:5, nombre:"Vela Aromática", categoria:"velas", precio:5200, imagen:"img/Vela aromática.jpg", detalle:"Relajante aroma a lavanda", stock:10 },
+  { id:6, nombre:"Vela de Jazmín y Canela", categoria:"velas", precio:3600, imagen:"img/vela-1.jpg", detalle:"Velas con esencias de jazmín y canela", stock:10 },
   { id:7, nombre:"Centro de Mesa Artesanal", categoria:"decoraciones", precio:5700, imagen:"img/Velas De Lavanda.jpg", detalle:"Decoración con flores secas", stock:8 },
   { id:8, nombre:"Adorno Artesanal", categoria:"decoraciones", precio:4800, imagen:"img/vela-1.jpg", detalle:"Figura tallada artesanalmente", stock:12 }
 ];
@@ -116,3 +116,4 @@ document.addEventListener('keydown', (e) => {
     closeMenu();
   }
 });
+
