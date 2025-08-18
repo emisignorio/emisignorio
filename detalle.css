@@ -1,0 +1,275 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fcf7f0;
+  color: #5a4a3c;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #f8f2e7;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.logo {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #6a5739;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li button {
+  background: none;
+  border: none;
+  color: #7f6b4a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+nav ul li button:hover {
+  color: #b08e46;
+}
+
+.detalle-main {
+  max-width: 900px;
+  margin: 3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+  padding: 2rem;
+}
+
+.detalle-imagen {
+  flex: 1 1 400px;
+}
+.detalle-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 400px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.detalle-info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  color: #5a4a3c;
+}
+
+.detalle-info h1 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  color: #6a5739;
+}
+
+.detalle-info p.descripcion {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: #7a6b57;
+}
+
+.detalle-info p.precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b08e46;
+  margin-bottom: 1rem;
+}
+
+.detalle-info p.stock {
+  font-size: 1rem;
+  color: #8c7f6b;
+  margin-bottom: 1.8rem;
+}
+
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cantidad-control button {
+  background: #b08e46;
+  border: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+.cantidad-control button:hover {
+  background: #8c6a30;
+}
+
+.cantidad-control span {
+  font-size: 1.3rem;
+  width: 40px;
+  text-align: center;
+}
+
+.btn-agregar-carrito {
+  background: #6a5739;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: start;
+}
+.btn-agregar-carrito:hover {
+  background: #5a472f;
+}
+
+footer {
+  background: #f0e7d9;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #7a6b57;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  margin-top: 2rem;
+}
+
+/* RESPONSIVE DETALLE */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .detalle-main {
+    margin: 2rem 1.5rem;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  nav ul li button {
+    padding: 0.5rem 1rem;
+    background: #e8dfd2;
+    border-radius: 6px;
+    min-height: 44px;
+  }
+  
+  .detalle-main {
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .detalle-imagen,
+  .detalle-info {
+    flex: 1 1 100%;
+  }
+  
+  .detalle-imagen img {
+    max-height: 300px;
+  }
+  
+  .detalle-info h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .detalle-info p.descripcion {
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .detalle-info p.precio {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  
+  .detalle-info p.stock {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cantidad-control {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cantidad-control button {
+    padding: 1rem;
+    font-size: 1.1rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .cantidad-control span {
+    font-size: 1.2rem;
+    min-width: 50px;
+  }
+  
+  .btn-agregar-carrito {
+    align-self: stretch;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    min-height: 44px;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .detalle-main {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  
+  .detalle-imagen img {
+    max-height: 250px;
+  }
+  
+  .detalle-info h1 {
+    font-size: 1.4rem;
+  }
+  
+  .detalle-info p.precio {
+    font-size: 1.3rem;
+  }
+  
+  .cantidad-control {
+    gap: 1rem;
+  }
+  
+  .cantidad-control button {
+    padding: 0.8rem;
+    min-width: 40px;
+  }
+}
