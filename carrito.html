@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Tu Carrito</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito - Artesanía Aromática</title>
+  <link href="carrito.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-    <div class="logo" onclick="irAlInicio()">Artesanía Aromática</div>
-    <nav>
-        <ul>
-        <li><button onclick="filtrarDesdeDetalle('todos')">Todos</button></li>
-        <li><button onclick="filtrarDesdeDetalle('velas')">Velas</button></li>
-        <li><button onclick="filtrarDesdeDetalle('decoraciones')">Decoraciones</button></li>
-        </ul>
-    </nav>
-    <div class="carrito" onclick="irAlCarrito()">
-        🛒 <span id="contadorcarrito">0</span>
-    </div>
-    </header>
 
-    <main class="carrito-container">
-    <h2>Tu carrito</h2>
-    <table class="tabla-carrito">
-        <thead>
-        <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-            <th>Total</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody id="filasCarrito"></tbody>
-    </table>
-    <div class="carrito-total">
-        <p>Total a pagar: $<span id="totalFinal">0</span></p>
-        <button onclick="finalizarCompra()">Finalizar compra</button>
-    </div>
-    </main>
-    <footer>
-        <p>Gracias por elegirnos 💛</p>
-    </footer>
-    <script src="carrito.js"></script>
+<header>
+  <div class="logo">Artesanía Aromática</div>
+  <nav>
+    <ul>
+      <li><button onclick="volverInicio()">Inicio</button></li>
+      <li><button onclick="irAlCarrito()">Carrito 🛒</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="carrito-container" id="carritoContainer">
+  <h1>Tu Carrito</h1>
+  <table class="tabla-carrito">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Subtotal</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody id="tablaBody">
+    </tbody>
+  </table>
+  <div class="carrito-total">
+    Total: $<span id="total">0</span>
+  </div>
+  <button id="btnPagar" class="btn-pagar">Pagar</button>
+  <div id="mensajePago" style="margin-top: 20px; color: green; font-weight: bold;"></div>
+  <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar Carrito</button>
+</main>
+
+<footer>
+  <p>&copy; 2025 Artesanía Aromática</p>
+</footer>
+
+<script src="carrito.js"></script>
 </body>
 </html>
