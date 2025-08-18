@@ -1,47 +1,81 @@
-let producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
+// Traer producto seleccionado del localStorage
+const productoSeleccionado = JSON.parse(localStorage.getItem('productoSeleccionado'));
+
+const detalleContainer = document.getElementById('detalleContainer');
+
 let cantidad = 1;
 
-function mostrarDetalle() {
-  if (!producto) return;
-
-  document.getElementById("imgProducto").src = producto.imagen;
-  document.getElementById("nombreProducto").innerText = producto.nombre;
-  document.getElementById("detalleProducto").innerText = producto.detalle;
-  document.getElementById("precioProducto").innerText = producto.precio;
-  document.getElementById("stockProducto").innerText = producto.stock;
-  document.getElementById("cantidad").innerText = cantidad;
+if (!productoSeleccionado) {
+  detalleContainer.innerHTML = '<p>Producto no encontrado. <button onclick="volverInicio()">Volver al inicio</button></p>';
+} else {
+  mostrarDetalle(productoSeleccionado);
 }
 
-function modificarCantidad(valor) {
-  const nuevaCantidad = cantidad + valor;
-  if (nuevaCantidad >= 1 && nuevaCantidad <= producto.stock) {
-    cantidad = nuevaCantidad;
-    document.getElementById("cantidad").innerText = cantidad;
+function mostrarDetalle(producto) {
+  detalleContainer.innerHTML = `
+    <div class="detalle-imagen">
+      <img src="${producto.imagen}" alt="${producto.nombre}" />
+    </div>
+    <div class="detalle-info">
+      <h1>${producto.nombre}</h1>
+      <p class="descripcion">${producto.detalle}</p>
+      <p class="precio">$${producto.precio}</p>
+      <p class="stock">Stock disponible: ${producto.stock}</p>
+      <div class="cantidad-control">
+        <button onclick="disminuirCantidad()">-</button>
+        <span id="cantidad">${cantidad}</span>
+        <button onclick="aumentarCantidad()">+</button>
+      </div>
+      <button class="btn-agregar-carrito" onclick="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
+  `;
+}
+
+function aumentarCantidad() {
+  if (cantidad < productoSeleccionado.stock) {
+    cantidad++;
+    document.getElementById('cantidad').textContent = cantidad;
+  } else {
+    alert('No hay suficiente stock');
+  }
+}
+
+function disminuirCantidad() {
+  if (cantidad > 1) {
+    cantidad--;
+    document.getElementById('cantidad').textContent = cantidad;
   }
 }
 
 function agregarAlCarrito() {
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const existente = carrito.find(p => p.id === producto.id);
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const itemExistente = carrito.find(item => item.id === productoSeleccionado.id);
 
-  if (existente) {
-    if (existente.cantidad + cantidad <= producto.stock) {
-      existente.cantidad += cantidad;
+  if (itemExistente) {
+    if (itemExistente.cantidad + cantidad <= productoSeleccionado.stock) {
+      itemExistente.cantidad += cantidad;
     } else {
-      alert("No hay suficiente stock disponible");
+      alert('No hay suficiente stock');
       return;
     }
   } else {
-    carrito.push({ ...producto, cantidad });
+    carrito.push({...productoSeleccionado, cantidad});
   }
 
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  window.location.href = "carrito.html";
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  alert('Producto agregado al carrito');
+  actualizarContador();
 }
 
-mostrarDetalle();
+function actualizarContador() {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  // Actualizar contador en header
+  const contador = document.getElementById('contadorcarrito');
+  if(contador) contador.textContent = total;
+}
 
-function irAlInicio() {
+function volverInicio() {
   window.location.href = "index.html";
 }
 
@@ -49,16 +83,4 @@ function irAlCarrito() {
   window.location.href = "carrito.html";
 }
 
-function filtrarDesdeDetalle(categoria) {
-  localStorage.setItem("categoriaActiva", categoria);
-  window.location.href = "index.html";
-}
-
-function actualizarContador() {
-  const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-  const contador = document.getElementById("contadorcarrito");
-  if (contador) contador.innerText = total;
-}
-
-document.addEventListener("DOMContentLoaded", actualizarContador);
+actualizarContador();
