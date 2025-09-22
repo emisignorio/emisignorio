@@ -1,12 +1,12 @@
 const productos = [
-  { id:1, nombre:"Vela Lavanda", categoria:"velas", precio:4200, imagen:"img/Vela aromática.jpg", detalle:"Relajante aroma a lavanda", stock:10 },
-  { id:2, nombre:"Vela Vainilla", categoria:"velas", precio:3200, imagen:"img/Vela-2.webp", detalle:"Velas con esencias de vainilla", stock:5 },
-  { id:3, nombre:"Centro de Mesa Floral", categoria:"decoraciones", precio:4500, imagen:"img/vela-3.jpg", detalle:"Decoración con flores secas", stock:10 },
-  { id:4, nombre:"Adorno de Madera", categoria:"decoraciones", precio:2800, imagen:"img/Vela-4.webp", detalle:"Figura tallada artesanalmente", stock:5 },
-  { id:5, nombre:"Vela Aromática", categoria:"velas", precio:5200, imagen:"img/Vela aromática.jpg", detalle:"Relajante aroma a lavanda", stock:10 },
-  { id:6, nombre:"Vela de Jazmín y Canela", categoria:"velas", precio:3600, imagen:"img/vela-1.jpg", detalle:"Velas con esencias de jazmín y canela", stock:10 },
-  { id:7, nombre:"Centro de Mesa Artesanal", categoria:"decoraciones", precio:5700, imagen:"img/Velas De Lavanda.jpg", detalle:"Decoración con flores secas", stock:8 },
-  { id:8, nombre:"Adorno Artesanal", categoria:"decoraciones", precio:4800, imagen:"img/vela-1.jpg", detalle:"Figura tallada artesanalmente", stock:12 }
+  { id:1, nombre:"Vela Vainilla", categoria:"velas", precio:8000, imagen:"img/vela de vainilla.jpeg", detalle:"Relajante aroma a Vainilla.", stock:10 },
+  { id:2, nombre:"Vela Lavanda", categoria:"velas", precio:5000, imagen:"img/vela de lavanda.jpeg", detalle:"Velas con esencias de Lavanda.", stock:5 },
+  { id:3, nombre:"Posavasos", categoria:"decoraciones", precio:3500, imagen:"img/posavasos.jpeg", detalle:"Posavasos tejidos a crochet.", stock:10 },
+  { id:4, nombre:"Funda de almohadón", categoria:"decoraciones", precio:7800, imagen:"img/funda de almohada.jpeg", detalle:"Funda de almohadón de 70 cm x 50 cm.", stock:5 },
+  { id:5, nombre:"Vela Aromática", categoria:"velas", precio:7200, imagen:"img/Vela aromática.jpg", detalle:"Vela Aromática de Coco y Vainilla.", stock:10 },
+  { id:6, nombre:"Vela de Jazmín y Canela", categoria:"velas", precio:6700, imagen:"img/velas con tapa.jpeg", detalle:"Velas con esencias de jazmín y canela.", stock:10 },
+  { id:7, nombre:"Guirnalda de espiral", categoria:"decoraciones", precio:7000, imagen:"img/decoracion espiral.jpeg", detalle:"Guirnaldas de colores en forma de espiral.", stock:8 },
+  { id:8, nombre:"Atrapasueños", categoria:"decoraciones", precio:10800, imagen:"img/atrapasueños.jpeg", detalle:"Atrapa sueños Decorativo Artesanal Tejido en Crochet de lana color natural/rosado.", stock:12 }
 ];
 
 const contenedorProductos = document.getElementById('productosContainer');
@@ -116,4 +116,3 @@ document.addEventListener('keydown', (e) => {
     closeMenu();
   }
 });
-
