@@ -20,7 +20,7 @@ function cargarCarrito() {
     const fila = document.createElement('tr');
     fila.innerHTML = `
       <td data-label="Producto">${item.nombre}</td>
-      <td data-label="Cantidad">${item.cantidad}</td>
+      <td data-label="Cantidad"><div class="cant-controls"><button class="btn-eliminar" style="padding:0.2rem 0.5rem" onclick="cambiarCantidad(${index}, -1)">-</button><span style="margin:0 8px; display:inline-block; min-width:22px; text-align:center;">${item.cantidad}</span><button class="btn-eliminar" style="padding:0.2rem 0.5rem" onclick="cambiarCantidad(${index}, 1)">+</button></div></td>
       <td data-label="Precio Unitario">$${item.precio}</td>
       <td data-label="Subtotal">$${subtotal}</td>
       <td data-label="Acción"><button class="btn-eliminar" onclick="eliminarProducto(${index})">Eliminar</button></td>
@@ -35,6 +35,28 @@ function cargarCarrito() {
 function eliminarProducto(index) {
   let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   carrito.splice(index, 1);
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  cargarCarrito();
+  actualizarContador();
+}
+
+function cambiarCantidad(index, delta) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  if (!carrito[index]) return;
+  const item = carrito[index];
+  const nuevaCantidad = (item.cantidad || 0) + delta;
+
+  if (delta > 0 && typeof item.stock === 'number' && nuevaCantidad > item.stock) {
+    alert('No hay suficiente stock');
+    return;
+  }
+
+  if (nuevaCantidad <= 0) {
+    carrito.splice(index, 1);
+  } else {
+    item.cantidad = nuevaCantidad;
+  }
+
   localStorage.setItem('carrito', JSON.stringify(carrito));
   cargarCarrito();
   actualizarContador();

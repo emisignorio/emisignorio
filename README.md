@@ -1,38 +1,167 @@
-<p align="center">
-  <img src="https://miro.medium.com/max/2048/1*OohqW5DGh9CQS4hLY5FXzA.png" height="230"/>
-</p>
-<hr>
-<h1 align="center">I'm <a href="https://github.com/Aryagm">Emilia Signorio<a><img src="https://github.com/Kathryn-Jie/Kathryn-Jie/blob/main/wave.gif" width="60px"/></h1>
-<Br>
-<h1>About Me! 😎</h1>
+# Artesanía Aromática - Tienda Online
 
-- 🏫: I'm a grade 5, High School Student.
-- 🔭: I’m currently working on many small projects.
-- 🤔: I’m looking for help with anything I am currently learning! 😅
-  
-<hr>
-<Br>
-<h1 align="center">Get in Touch! 📬</h1>
-<Br>
-<p align="center">
-<a href="mailto:emiliasignorio@gmail.com" target="blank"><img align="center" src="https://img.shields.io/badge/emiliasignorio@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>    &nbsp;&nbsp;&nbsp;       <a href="https://www.github.com/emisignorio" target="blank"><img align="center" src="https://img.shields.io/badge/emisignorio-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
-</p>
-  
+Una tienda online elegante y responsiva especializada en velas artesanales y decoraciones aromáticas. Desarrollada con tecnologías web modernas para ofrecer una experiencia de compra fluida en cualquier dispositivo.
 
+## 📋 Descripción del Proyecto
 
-<Br>
-<h1>Tools I use! 🛠️</h1>
-<Br>
- 
-|![](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=darkgreen)|![](https://img.shields.io/badge/JavaScript-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=white)|![](https://img.shields.io/badge/c++-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)|||
-|---|---|---|---|---|
+**Artesanía Aromática** es un e-commerce completo que permite a los usuarios navegar por un catálogo de productos artesanales, ver detalles de cada producto, agregar items al carrito de compras y procesar pedidos. El sitio está optimizado para dispositivos móviles, tablets y desktop.
 
-  
+## 🛠️ Tecnologías Utilizadas
 
-<Br>
-<hr>
+### Frontend
+- **HTML5** - Estructura semántica y accesible
+- **CSS3** - Diseño responsivo con Flexbox y CSS Grid
+- **JavaScript (ES6+)** - Funcionalidad interactiva y manejo del DOM
+- **LocalStorage** - Persistencia de datos del carrito
 
-<h1>Thank You! 🤵 </h1>
-<Br>
+### Características Técnicas
+- **Diseño Responsivo** - Mobile-first approach con breakpoints para:
+  - Móvil pequeño: 320px - 480px
+  - Móvil: 481px - 768px  
+  - Tablet: 768px - 1024px
+  - Desktop: >1024px
+- **PWA Ready** - Optimizado para comportarse como app nativa
+- **Accesibilidad** - ARIA labels y navegación por teclado
+- **Performance** - Imágenes optimizadas y CSS minificado
 
-------
+## 🚀 Funcionalidades
+
+### Página Principal (index.html)
+- ✅ Catálogo de productos con filtros por categoría
+- ✅ Menú hamburguesa responsivo
+- ✅ Contador de items en carrito en tiempo real
+- ✅ Cards de productos con vista previa
+
+### Página de Detalle (detalle.html)
+- ✅ Vista detallada de cada producto
+- ✅ Control de cantidad con validación de stock
+- ✅ Botón para agregar al carrito
+- ✅ Navegación responsive
+
+### Carrito de Compras (carrito.html)
+- ✅ Tabla responsive con items del carrito
+- ✅ Modificación de cantidades
+- ✅ Eliminación de productos
+- ✅ Cálculo automático de totales
+- ✅ Proceso de checkout simulado
+
+### Características Destacadas
+- 🎨 **Diseño Artesanal** - Paleta de colores cálidos y naturales
+- 📱 **100% Responsive** - Perfecto en todos los dispositivos
+- 🛒 **Carrito Persistente** - Los datos se mantienen entre sesiones
+- ⚡ **Carga Rápida** - Optimizado para performance
+- 🎯 **UX/UI Intuitiva** - Navegación fluida y botones touch-friendly
+
+## 📁 Estructura del Proyecto
+
+```
+artesania-aromatica/
+├── index.html              # Página principal
+├── detalle.html            # Página de detalle del producto
+├── carrito.html            # Página del carrito de compras
+├── estilo.css              # Estilos principales
+├── detalle.css             # Estilos específicos de detalle
+├── carrito.css             # Estilos específicos del carrito
+├── javascript.js           # Lógica principal de la app
+├── detalle.js              # Funcionalidad de página de detalle
+├── carrito.js              # Funcionalidad del carrito
+├── img/                    # Carpeta de imágenes
+│   ├── Logo.png            # Logo de la empresa
+│   ├── Vela aromática.jpg  # Imagen hero
+│   ├── Vela-2.webp         # Producto 1
+│   ├── vela-1.jpg          # Producto 2
+│   ├── vela-3.jpg          # Producto 3
+│   ├── Vela-4.webp         # Producto 4
+│   └── Velas De Lavanda.jpg # Producto 5
+└── README.md               # Este archivo
+```
+
+## 🎯 Cómo Probar el Proyecto
+
+### Opción 1: Servidor Local Simple
+```bash
+# Navega al directorio del proyecto
+cd ruta/del/proyecto
+
+# Inicia un servidor HTTP simple con Python 3
+python -m http.server 8000
+
+# O con Python 2
+python -m SimpleHTTPServer 8000
+
+# Abre tu navegador en: http://localhost:8000
+```
+
+### Opción 2: Live Server (VS Code)
+1. Instala la extensión "Live Server" en VS Code
+2. Haz clic derecho en `index.html`
+3. Selecciona "Open with Live Server"
+
+### Opción 3: Navegador Directo
+1. Abre tu navegador web
+2. Arrastra el archivo `index.html` a la ventana del navegador
+3. ¡Listo para navegar!
+
+## 📱 Pruebas en Dispositivos Móviles
+
+### Simulador de Dispositivos (Chrome DevTools)
+1. Abre Chrome DevTools (F12)
+2. Activa el "Device Toolbar" (Ctrl+Shift+M)
+3. Selecciona diferentes dispositivos para probar:
+   - iPhone SE (375x667)
+   - iPad Air (820x1180)
+   - Samsung Galaxy S20 (360x800)
+
+### Pruebas Reales
+- Asegúrate de probar en dispositivos reales para validar touch gestures
+- Verifica el menú hamburguesa en móviles
+- Confirma que los botones sean fáciles de presionar
+
+## 🛍️ Flujo de Usuario Recomendado
+
+1. **Explora el Catálogo** - Navega por las categorías "Velas" y "Decoraciones"
+2. **Ve Detalles** - Haz clic en "Ver detalle del producto" en cualquier card
+3. **Ajusta Cantidad** - Usa los controles + y - para seleccionar cantidad
+4. **Agrega al Carrito** - Haz clic en "Agregar al carrito"
+5. **Revisa el Carrito** - Haz clic en el ícono del carrito 🛒
+6. **Modifica Pedido** - Cambia cantidades o elimina productos si deseas
+7. **Finaliza Compra** - Haz clic en "Pagar" para completar el pedido
+
+## 🎨 Personalización
+
+### Colores del Tema
+```css
+/* Variables de color principales */
+--primary-bg: #fcf7f0;      /* Fondo principal */
+--secondary-bg: #f8f2e7;    /* Fondo del header */
+--accent-color: #b08e46;    /* Color de acento */
+--text-primary: #5a4a3c;    /* Texto principal */
+--text-secondary: #7f6b4a;  /* Texto secundario */
+```
+
+### Agregando Nuevos Productos
+1. Agrega la imagen del producto a la carpeta `img/`
+2. Modifica el array `productos` en `javascript.js`
+3. Sigue la estructura existente para mantener consistencia
+
+## 🚀 Futuras Mejoras
+
+- [ ] Sistema de autenticación de usuarios
+- [ ] Base de datos para productos
+- [ ] Pasarela de pago real
+- [ ] Sistema de reviews y calificaciones
+- [ ] Wishlist de productos favoritos
+- [ ] Búsqueda avanzada con filtros
+- [ ] Integración con redes sociales
+
+## 📞 Soporte
+
+¿Encontraste un bug o tienes una sugerencia? 
+- Abre un issue en el repositorio del proyecto
+- Envía tus comentarios y mejoras
+
+---
+
+**Desarrollado con ❤️ para amantes de las velas artesanales**
+
+*Versión: 1.0.0 | Última actualización: 2025*
