@@ -10,7 +10,14 @@ function cargarCarrito() {
     totalSpan.textContent = '0';
     return;
   }
-
+function aumentarCantidad() {
+  if (cantidad < productoSeleccionado.stock) {
+    cantidad++;
+    document.getElementById('cantidad').textContent = cantidad;
+  } else {
+    alert('No hay suficiente stock');
+  }
+}
   let total = 0;
 
   carrito.forEach((item, index) => {
@@ -108,3 +115,4 @@ botonPagar.addEventListener('click', () => {
     window.location.href = 'index.html';
   }, 4000);
 });
+
